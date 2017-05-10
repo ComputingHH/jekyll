@@ -1,5 +1,7 @@
 ---
 title: Automated Downloading with Wget
+authors:
+- Ian Milligan
 date: 2012-06-27
 reviewers:
 - Aurélien Berra
