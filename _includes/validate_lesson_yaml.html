@@ -1,0 +1,43 @@
+{% comment %}
+	Checks for the presence of fields in any YAML for pages of layout: "default" (i.e. all lessons on the Programming Historian)
+{% endcomment %}
+
+{% unless page.deprecated %}
+
+	{% unless page.title %}
+		{{ "title" | raise_error }}
+	{% endunless %}
+
+	{% unless page.authors %}
+		{{ "authors" | raise_error }}
+	{% endunless %}
+
+	{% unless page.date %}
+		{{ "date" | raise_error }}
+	{% endunless %}
+
+	{% unless page.reviewers %}
+		{{ "reviewers" | raise_error }}
+	{% endunless %}
+
+	{% unless page.editors %}
+		{{ "editors" | raise_error }}
+	{% endunless %}
+
+	{% unless page.difficulty %}
+		{{ "difficulty" | raise_error }}
+	{% endunless %}
+
+	{% if page.lang == "es" %}
+		{% unless page.translator %}
+			{{ "translator" | raise_error }}
+		{% endunless %}
+		{% unless page.translation-reviewer %}
+			{{ "translation-reviewer" | raise_error }}
+		{% endunless %}
+		{% unless page.redirect_from %}
+			{{ "redirect_from" | raise_error }}
+		{% endunless %}
+	{% endif %}
+
+{% endunless %}
