@@ -2,9 +2,7 @@
 layout: blank
 ---
 
-{% if page.author == blank %}
-{{ "This lesson has no authors" | raise_error }}
-{% endif %}
+{% include validate_lesson_yaml.html %}
 
     <header>
 
