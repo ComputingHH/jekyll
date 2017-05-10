@@ -2,6 +2,10 @@
 layout: blank
 ---
 
+{% if page.author == blank %}
+{{ "This lesson has no authors" | raise_error }}
+{% endif %}
+
     <header>
 
     {% if page.deprecated %}
