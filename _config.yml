@@ -8,7 +8,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Procfile
-safe: true
+safe: false
 highlighter: rouge
 markdown: kramdown
 gems:
