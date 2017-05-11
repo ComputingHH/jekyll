@@ -24,10 +24,6 @@
 		{{ "editors" | raise_error }}
 	{% endunless %}
 
-	{% unless page.difficulty %}
-		{{ "difficulty" | raise_error }}
-	{% endunless %}
-
 	{% if page.lang == "es" %}
 		{% unless page.translator %}
 			{{ "translator" | raise_error }}
