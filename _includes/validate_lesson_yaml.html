@@ -20,19 +20,23 @@
 		{{ "reviewers" | raise_error }}
 	{% endunless %}
 
-	{% unless page.editors %}
-		{{ "editors" | raise_error }}
-	{% endunless %}
-
-	{% if page.lang == "es" %}
-		{% unless page.translator %}
-			{{ "translator" | raise_error }}
-		{% endunless %}
+	{% if page.translator %}
 		{% unless page.translation-reviewer %}
 			{{ "translation-reviewer" | raise_error }}
 		{% endunless %}
+	{% elsif page.translation-reviewer %}
+		{% unless page.translator %}
+			{{ "translator" | raise_error }}
+		{% endunless %}
+	{% endif %}
+
+	{% if page.lang == "es" %}
 		{% unless page.redirect_from %}
 			{{ "redirect_from" | raise_error }}
+		{% endunless %}
+	{% else %}
+		{% unless page.editors %}
+			{{ "editors" | raise_error }}
 		{% endunless %}
 	{% endif %}
 
