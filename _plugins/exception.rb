@@ -3,8 +3,8 @@ module Jekyll
   module ExceptionFilter
     def raise_error(field)
     	bad_page = @context.registers[:page]['path']
-    	err_msg = "YAML header for #{bad_page} has a missing or empty '#{field}' field."
-      warn err_msg
+    	err_msg = "#{bad_page}\n\tmissing YAML field: #{field}"
+      	warn err_msg
     end
   end
 end
