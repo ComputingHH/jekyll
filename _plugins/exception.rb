@@ -4,7 +4,7 @@ module Jekyll
     def raise_error(field)
     	bad_page = @context.registers[:page]['path']
     	err_msg = "YAML header for #{bad_page} has a missing or empty '#{field}' field."
-      raise err_msg
+      warn err_msg
     end
   end
 end
